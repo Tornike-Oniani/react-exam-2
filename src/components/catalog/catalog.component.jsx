@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 
 import Product from '../product/product.component';
-import Loader from '../loader/loader.component';
 
 import './catalog.style.scss';
 
