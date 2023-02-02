@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import CartItem from '../cart-item/cart-item.component';
 
@@ -6,6 +6,7 @@ import './cart.style.scss';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   return !cart.items | (cart.items.length === 0) ? (
     <div className="cart">
@@ -13,7 +14,16 @@ const Cart = () => {
     </div>
   ) : (
     <div className="cart">
-      <button className="cart__checkout btn">
+      <button
+        className="cart__checkout btn"
+        onClick={() => {
+          dispatch({
+            type: 'orderHistory/addedPackage',
+            payload: { cost: cart.totalCost, items: cart.items },
+          });
+          dispatch({ type: 'cart/checkedOut' });
+        }}
+      >
         Checkout for {cart.totalCost.toFixed(2)}$
       </button>
       <ul className="cart-list">

@@ -1,0 +1,26 @@
+.package-item {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  row-gap: 1.2rem;
+  justify-items: center;
+  max-width: 20rem;
+
+  &:not(:last-child) {
+    margin-right: 4.2rem;
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    height: 4rem;
+    overflow: hidden;
+  }
+
+  &__imageUrl {
+    width: 15rem;
+    max-height: 20rem;
+  }
+
+  &__price {
+    font-size: 1.8rem;
+  }
+}
