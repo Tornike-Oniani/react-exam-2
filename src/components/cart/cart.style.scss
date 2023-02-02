@@ -1,0 +1,9 @@
+.cart {
+  background: #fafafa;
+
+  &__checkout {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 0.6rem;
+  }
+}
