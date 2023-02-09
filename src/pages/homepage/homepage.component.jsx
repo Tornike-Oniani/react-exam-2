@@ -12,7 +12,7 @@ const Homepage = () => {
 
   useEffect(() => {
     dispatch(fetchProducts);
-  });
+  }, []);
 
   return (
     <div className="homepage">
